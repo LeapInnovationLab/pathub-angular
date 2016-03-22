@@ -7,6 +7,6 @@ Setup Development
 - Node.js is required, make sure to have a newer/stable version.
 - Then execute the following commands:
 
-*  
+* npm install -g typings 
 * npm install
 * npm start
