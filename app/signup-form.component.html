@@ -1,6 +1,8 @@
 
 <div class="container">
-    <h1>Join QueSee Now!</h1>
+    <div class="page-header">
+        <h1>Join QueSee Now!</h1>
+    </div>
     <form [ngFormModel]="form" (ngSubmit)="signup()">
         <div class="form-group">
             <label for="firtsName">First Name</label>
@@ -22,13 +24,17 @@
             <input ngControl="email" #email="ngForm" type="email" class="form-control" id="email" required>
             <div *ngIf="email.control.pending">Validating email ...</div>
             <div *ngIf="email.touched && email.errors">
+                <div class="text-danger" *ngIf="email.errors.required">Email is required</div>                
                 <div class="text-danger" *ngIf="email.errors.shouldBeUnique">This email is already taken</div>
             </div>
         </div>
         <div class="form-group">
             <label for="password">Password</label>
             <input ngControl="password" #password="ngForm" type="password" class="form-control" id="password" maxlength="120" required>
-            <div class="text-danger" *ngIf="password.errors && password.errors.invalidPassword">Invalid Password</div>
+            <div *ngIf="password.touched && password.errors">
+                <div class="text-danger" *ngIf="password.errors.required">Password is required</div>
+                <div class="text-danger" *ngIf="password.errors.invalidPassword">Invalid Password</div>
+            </div>
         </div>        
         <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Submit</button>
     </form>
