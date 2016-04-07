@@ -1,5 +1,5 @@
 # quesee-angular
-QueSee 2.0 Web App (Angular)
+PathHub 2.0 Web App (Angular)
 
 Setup Development
 ===
