@@ -17,6 +17,8 @@ import {PostService} from '../services/post.service'
             </p>
             <hr />
             <a [routerLink]="['/Paths','Index']">Back to Paths</a>
+            | 
+            <a [routerLink]="['/Paths', 'Edit', {id: path.id}]">Edit</a>
         </div>
     `,
     providers: [HTTP_PROVIDERS, PostService],

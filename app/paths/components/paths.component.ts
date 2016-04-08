@@ -4,10 +4,12 @@ import {ROUTER_DIRECTIVES, RouteConfig} from 'angular2/router'
 import {PathsShowComponent} from '../components/show.component'
 import {PathsIndexComponent} from '../components/index.component'
 import {PathsNewComponent} from '../components/new.component'
+import {PathsEditComponent} from '../components/edit.component'
 
 @RouteConfig([
     { path: '/', name: 'Index', component: PathsIndexComponent, useAsDefault: true },
     { path: '/:id', name: 'Show', component: PathsShowComponent },
+    { path: '/:id/edit', name: 'Edit', component: PathsEditComponent },
     { path: '/new', name: 'New', component: PathsNewComponent },
 ])
 @Component({
