@@ -50,7 +50,7 @@ import {PostService} from '../services/post.service'
 })
 export class PathsFormComponent implements OnInit{
     @Input() pathId
-    path : Post
+    path : Post = { title: '', body: '', userId: ''}
     
     form: ControlGroup
     
@@ -59,14 +59,18 @@ export class PathsFormComponent implements OnInit{
             name: ['', Validators.required],
             description: ['', Validators.required]
         })
-        this.path = { title: '', body: '', userId: ''}
     }
     
     ngOnInit(){
         if (this.pathId) {
-            this._postService.getPost(this.pathId).subscribe( data => {
-                this.path = data
-            })          
+            this._postService.getPost(this.pathId).subscribe( 
+                data =>  this.path = data,
+                response => {
+                    if (response.status == 404) {
+                        this._router.navigate(['NotFound'])
+                    }
+                }
+            )          
             console.log("ID::::" + this.pathId)      
         }        
     }

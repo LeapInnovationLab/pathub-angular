@@ -1,15 +1,16 @@
 import {Component, OnInit} from 'angular2/core'
 import {HTTP_PROVIDERS} from 'angular2/http'
 
+import {SpinnerComponent} from '../../shared/components/spinner.component'
 import {UsersService} from '../services/users.service'
 
 @Component({
     template: `
-        <h2>People</h2>
+        <h2>
+            People
+        </h2>
         <hr />
-        <div *ngIf="isLoading">
-            <i class="fa fa-spinner fa-spin fa-2x"></i>
-        </div>
+        <spinner [visible]="isLoading"></spinner>
         <div class="row">
             <div class="col-md-6" *ngFor="#user of users; #i = index; #isEven = even" style="padding: 10px 0;">
                 <div class="media">
@@ -27,7 +28,8 @@ import {UsersService} from '../services/users.service'
             </div>
         </div>        
     `,
-    providers: [UsersService, HTTP_PROVIDERS]
+    providers: [UsersService, HTTP_PROVIDERS],
+    directives: [SpinnerComponent]
 })
 export class UsersBrowse implements OnInit{
     isLoading = true

@@ -10,3 +10,7 @@ Setup Development
 * npm install -g typings 
 * npm install
 * npm start
+
+Typings for Underscore
+==
+* typings install underscore --ambient
