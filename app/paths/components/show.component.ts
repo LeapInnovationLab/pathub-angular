@@ -16,13 +16,13 @@ import {PostService} from '../services/post.service'
                 {{ path.body }}
             </p>
             <hr />
-            <a [routerLink]="['Paths']">Back to Paths</a>
+            <a [routerLink]="['/Paths','Index']">Back to Paths</a>
         </div>
     `,
     providers: [HTTP_PROVIDERS, PostService],
     directives: [ROUTER_DIRECTIVES]
 })
-export class PathComponent implements OnInit{
+export class PathsShowComponent implements OnInit{
     isLoading = true
     path;
     

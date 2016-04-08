@@ -1,32 +1,30 @@
 import {Component, OnInit} from 'angular2/core'
 import {HTTP_PROVIDERS} from 'angular2/http'
-import {ROUTER_DIRECTIVES} from 'angular2/router'
+import {ROUTER_DIRECTIVES, RouteConfig} from 'angular2/router'
 
 import {PostService} from '../services/post.service'
 
 @Component({
     selector: 'paths',
     template: `
-        <h1>Paths</h1>
-        <hr />
         <div class="pull-right">
-            <a [routerLink]="['NewPath']">New</a>            
+            <a [routerLink]="['/Paths', 'New']">New</a>            
         </div>
         <div *ngIf="isLoading">
             <i class="fa fa-spinner fa-spin fa-2x"></i>
         </div>
         <ul>
             <li *ngFor="#path of paths">
-                <a [routerLink]="['Path', {id: path.id } ]">
+                <a [routerLink]="['/Paths/Show', {id: path.id } ]">
                     {{ path.title }}
                 </a>
             </li>            
-        </ul>
+        </ul>        
     `,
     providers: [HTTP_PROVIDERS, PostService],
     directives: [ROUTER_DIRECTIVES]
 })
-export class PathsComponent implements OnInit {
+export class PathsIndexComponent implements OnInit {
     isLoading = true
     paths = []  
        

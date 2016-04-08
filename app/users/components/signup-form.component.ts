@@ -1,10 +1,10 @@
 import {Component} from 'angular2/core'
 import {ControlGroup, Control, Validators, FormBuilder} from 'angular2/common'
-import {EmailValidators} from './emailValidators'
+import {EmailValidators} from '../classes/emailValidators'
 
 @Component({
     selector: 'signup-form',
-    templateUrl: 'app/signup-form.component.html'
+    templateUrl: 'app/users/templates/signup-form.component.html'
 })
 export class SignUpFormComponent {
     // form = new ControlGroup({

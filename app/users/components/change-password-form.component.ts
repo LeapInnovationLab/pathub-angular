@@ -1,10 +1,10 @@
 import {Component} from 'angular2/core'
 import {ControlGroup, FormBuilder, Validators} from 'angular2/common'
-import {PasswordValidators} from './password-validators'
+import {PasswordValidators} from '../classes/password-validators'
 
 @Component({
     selector: 'change-password-form',
-    templateUrl: 'app/change-password-form.component.html'
+    templateUrl: 'app/users/templates/change-password-form.component.html'
 })
 export class ChangePasswordComponent {
     form: ControlGroup
