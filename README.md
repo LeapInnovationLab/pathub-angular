@@ -1,6 +1,6 @@
 # angular 2 - sample project
 
-Setup Development
+## Setup Development
 ===
 - Clone project from github and move to the working directory.
 - Node.js is required, make sure to have a newer/stable version.
@@ -10,6 +10,6 @@ Setup Development
 * npm install
 * npm start
 
-Typings for Underscore
+## Typings for Underscore
 ==
 * typings install underscore --ambient
